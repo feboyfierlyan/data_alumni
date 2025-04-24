@@ -1,0 +1,119 @@
+/* Modern Form Input Styles */
+.modern-input {
+  appearance: none;
+  background-color: #FFFFFF;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modern-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  outline: none;
+  transform: translateY(-2px);
+  animation: input-focus 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modern-input:hover {
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.modern-input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.modern-input:focus::placeholder {
+  opacity: 0.7;
+  transform: translateX(4px);
+}
+
+.modern-input:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Form Label Styles */
+.modern-label {
+  color: #475569;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left;
+}
+
+.modern-input:focus + .modern-label {
+  color: #3b82f6;
+  transform: scale(1.05);
+}
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Error State */
+.modern-input.error {
+  border-color: #ef4444;
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-1px);
+  }
+  20%, 80% {
+    transform: translateX(2px);
+  }
+  30%, 50%, 70% {
+    transform: translateX(-3px);
+  }
+  40%, 60% {
+    transform: translateX(3px);
+  }
+}
+
+/* Success State */
+.modern-input.success {
+  border-color: #22c55e;
+  animation: success-pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes success-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes input-focus {
+  0% {
+    transform: scale(0.98);
+  }
+  70% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
